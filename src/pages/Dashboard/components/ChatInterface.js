@@ -300,7 +300,7 @@ export default function ChatInterface({ selectedProject }) {
         )}
         <div ref={messagesEndRef} />
       </Box>
-      <Box borderTop={1} borderColor="#e0e0e0" p={2} display="flex" gap={2} alignItems="center" sx={{ background: 'rgba(255,255,255,0.95)' }}>
+      <Box borderTop={1} borderColor="#E2E8F0" p={2} display="flex" gap={2} alignItems="center" sx={{ background: '#FFFFFF' }}>
         <TextField
           fullWidth
           variant="outlined"
@@ -310,9 +310,24 @@ export default function ChatInterface({ selectedProject }) {
           onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
           InputProps={{
             style: {
-              background: '#fbeee6',
+              background: '#F8FAFC',
               borderRadius: 8,
-              fontFamily: 'Segoe UI, sans-serif',
+              fontFamily: '"Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
+              fontSize: '15px',
+              color: '#334155',
+            },
+            sx: {
+              '& .MuiOutlinedInput-root': {
+                '& fieldset': {
+                  borderColor: '#E2E8F0',
+                },
+                '&:hover fieldset': {
+                  borderColor: '#475569',
+                },
+                '&.Mui-focused fieldset': {
+                  borderColor: '#334155',
+                },
+              },
             },
           }}
         />
@@ -321,11 +336,11 @@ export default function ChatInterface({ selectedProject }) {
           onClick={handleSendMessage}
           disabled={!inputMessage.trim() || !selectedProject?.name}
           sx={{
-            background: 'linear-gradient(90deg, #f58529 0%, #dd2a7b 40%, #8134af 70%, #515bd4 100%)',
+            background: '#334155',
             color: '#fff',
             fontWeight: 600,
             borderRadius: 2,
-            boxShadow: '0 2px 8px 0 rgba(221, 42, 123, 0.10)',
+            boxShadow: '0 2px 4px 0 rgba(51, 65, 85, 0.15)',
             fontSize: 18,
             letterSpacing: 1,
             minWidth: 48,
@@ -334,7 +349,11 @@ export default function ChatInterface({ selectedProject }) {
             alignItems: 'center',
             justifyContent: 'center',
             '&:hover': {
-              background: 'linear-gradient(90deg, #515bd4 0%, #8134af 30%, #dd2a7b 70%, #f58529 100%)',
+              background: '#475569',
+            },
+            '&:disabled': {
+              background: '#E2E8F0',
+              color: '#94A3B8',
             },
           }}
         >

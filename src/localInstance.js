@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-const apiUrl = "https://aurabackend1.yellowsea-f076f2f8.eastus.azurecontainerapps.io";
-// const apiUrl = "http://localhost:8000";
+// const apiUrl = "https://aurabackend1.yellowsea-f076f2f8.eastus.azurecontainerapps.io";
+const apiUrl = "http://localhost:8000";
 
 const localInstance = axios.create({
   baseURL: apiUrl,

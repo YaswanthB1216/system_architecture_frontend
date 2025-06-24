@@ -66,7 +66,7 @@ function Register() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: 'linear-gradient(135deg, #f58529 0%, #dd2a7b 40%, #8134af 70%, #515bd4 100%)',
+        background: 'linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #3498db 100%)',
       }}
     >
       <Card
@@ -74,29 +74,30 @@ function Register() {
           width: '100%',
           maxWidth: 420,
           borderRadius: 4,
-          boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.18)',
-          background: 'rgba(255,255,255,0.95)',
+          boxShadow: '0 8px 32px 0 rgba(44, 62, 80, 0.25)',
+          background: 'rgba(255,255,255,0.98)',
           px: 2,
         }}
       >
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginTop: 24, marginBottom: 8 }}>
-          {/* Text-based Aura Vibe logo */}
           <div style={{ width: '100%', textAlign: 'center' }}>
             <span style={{
-              fontFamily: 'Segoe UI, sans-serif',
-              fontWeight: 800,
-              fontSize: 36,
-              background: 'linear-gradient(90deg, #f58529 0%, #dd2a7b 40%, #8134af 70%, #515bd4 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              letterSpacing: 2,
+              fontFamily: '"Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
+              fontWeight: 700,
+              fontSize: 38,
+              color: '#1E293B',
+              letterSpacing: '0.5px',
               textAlign: 'center',
-            }}>Aura </span>
-            <div style={{
-              fontFamily: 'Segoe UI, sans-serif',
+              textTransform: 'none',
+              textShadow: '0 2px 4px rgba(0, 0, 0, 0.08)',
+              display: 'block',
+              marginBottom: '4px'
+            }}>Architect Copilot</span>
+            {/* <div style={{
+              fontFamily: '"Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
               fontWeight: 400,
               fontSize: 14,
-              color: '#515bd4',
+              color: '#34495e',
               marginTop: 4,
               textAlign: 'center',
               maxWidth: 260,
@@ -105,10 +106,10 @@ function Register() {
               marginRight: 'auto',
             }}>
               Turn your idea into reality.
-            </div>
+            </div> */}
           </div>
         </div>
-        <Typography variant="subtitle1" align="center" color="#f58529" style={{ marginBottom: 8 }}>
+        <Typography variant="subtitle1" align="center" color="#34495e" style={{ marginBottom: 8 }}>
           Create your Aura account
         </Typography>
         <CardContent>
@@ -124,7 +125,7 @@ function Register() {
               required
               InputProps={{
                 style: {
-                  background: '#fbeee6',
+                  background: '#f7f9fa',
                   borderRadius: 8,
                 },
               }}
@@ -141,7 +142,7 @@ function Register() {
               required
               InputProps={{
                 style: {
-                  background: '#fbeee6',
+                  background: '#f7f9fa',
                   borderRadius: 8,
                 },
               }}
@@ -158,12 +159,12 @@ function Register() {
               required
               InputProps={{
                 style: {
-                  background: '#fbeee6',
+                  background: '#f7f9fa',
                   borderRadius: 8,
                 },
               }}
             />
-            <TextField
+            {/* <TextField
               id="role"
               label="Role (optional)"
               select
@@ -173,34 +174,34 @@ function Register() {
               margin="normal"
               InputProps={{
                 style: {
-                  background: '#fbeee6',
+                  background: '#f7f9fa',
                   borderRadius: 8,
                 },
               }}
             >
               {roles.map((option) => (
-                <MenuItem key={option.value} value={option.value} style={{ color: '#dd2a7b' }}>
+                <MenuItem key={option.value} value={option.value} style={{ color: '#34495e' }}>
                   {option.label}
                 </MenuItem>
               ))}
-            </TextField>
+            </TextField> */}
             <Button
               type="submit"
               variant="contained"
               fullWidth
               disabled={loading}
               sx={{
-                background: 'linear-gradient(90deg, #f58529 0%, #dd2a7b 40%, #8134af 70%, #515bd4 100%)',
+                background: 'linear-gradient(90deg, #2c3e50 0%, #34495e 50%, #3498db 100%)',
                 color: '#fff',
                 fontWeight: 600,
                 borderRadius: 8,
-                boxShadow: '0 2px 8px 0 rgba(221, 42, 123, 0.12)',
+                boxShadow: '0 2px 8px 0 rgba(44, 62, 80, 0.25)',
                 py: 1.5,
                 fontSize: 18,
                 letterSpacing: 1,
                 mt: 1,
                 '&:hover': {
-                  background: 'linear-gradient(90deg, #515bd4 0%, #8134af 30%, #dd2a7b 70%, #f58529 100%)',
+                  background: 'linear-gradient(90deg, #3498db 0%, #34495e 50%, #2c3e50 100%)',
                 },
               }}
             >

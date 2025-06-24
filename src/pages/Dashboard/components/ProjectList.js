@@ -71,11 +71,11 @@ export default function ProjectList({ selectedProject, setSelectedProject }) {
               mb: 1.2,
               boxShadow: 'none',
               border: selectedProject?.id === project?.id || selectedProject?._id === project?._id
-                ? '1.5px solid #8134af'
-                : '1.5px solid #ececec',
+                ? '1.5px solid #334155'
+                : '1.5px solid #E2E8F0',
               backgroundColor: selectedProject?.id === project?.id || selectedProject?._id === project?._id
-                ? 'rgba(129, 52, 175, 0.07)'
-                : 'rgba(245, 248, 250, 0.7)',
+                ? 'rgba(51, 65, 85, 0.05)'
+                : 'rgba(248, 250, 252, 0.7)',
               borderRadius: 2,
               cursor: 'pointer',
               transition: 'border 0.2s, background 0.2s',
@@ -84,7 +84,7 @@ export default function ProjectList({ selectedProject, setSelectedProject }) {
           >
             <Typography
               sx={{
-                color: selectedProject?.id === project?.id || selectedProject?._id === project?._id ? '#8134af' : '#222',
+                color: selectedProject?.id === project?.id || selectedProject?._id === project?._id ? '#334155' : '#64748B',
                 fontWeight: selectedProject?.id === project?.id || selectedProject?._id === project?._id ? 700 : 500,
                 fontSize: 16,
                 letterSpacing: 0.2,
@@ -97,42 +97,45 @@ export default function ProjectList({ selectedProject, setSelectedProject }) {
         ))}
       </div>
 
-     {user.role === 'business_user' && <Button
+     {user.role === 'business_user' &&
+     
+      <Button
         variant="contained"
-        startIcon={<Plus />}
+        startIcon={<Plus size={12} />}
         sx={{
           mt: 2,
-          width: '100%',
-          background: 'linear-gradient(90deg, #f58529 0%, #dd2a7b 40%, #8134af 70%, #515bd4 100%)',
+          width: '70%',
+          background: '#334155',
           color: '#fff',
           fontWeight: 600,
           borderRadius: 2,
-          boxShadow: '0 2px 8px 0 rgba(221, 42, 123, 0.10)',
-          fontSize: 16,
-          letterSpacing: 1,
+          boxShadow: '0 2px 4px 0 rgba(51, 65, 85, 0.15)',
+          fontSize: 12,
+          letterSpacing: 0.5,
+          textTransform: 'none',
           '&:hover': {
-            background: 'linear-gradient(90deg, #515bd4 0%, #8134af 30%, #dd2a7b 70%, #f58529 100%)',
+            background: '#475569',
           },
         }}
         onClick={() => setShowCreateModal(true)}
       >
         New Project
-      </Button> }
+      </Button>}
 
       <Dialog open={showCreateModal} onClose={() => setShowCreateModal(false)}
         PaperProps={{
           sx: {
-            borderRadius: 3,
-            background: 'rgba(255,255,255,0.98)',
-            boxShadow: 6,
+            borderRadius: 2,
+            background: '#FFFFFF',
+            boxShadow: '0 8px 32px 0 rgba(51, 65, 85, 0.15)',
             p: 2,
           }
         }}
       >
         <DialogTitle sx={{
           fontWeight: 700,
-          fontFamily: 'Segoe UI, sans-serif',
-          color: '#8134af',
+          fontFamily: '"Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
+          color: '#334155',
           textAlign: 'center',
           fontSize: 22,
         }}>Create New Project</DialogTitle>
@@ -149,9 +152,22 @@ export default function ProjectList({ selectedProject, setSelectedProject }) {
             onKeyDown={(e) => e.key === 'Enter' && handleCreateProject()}
             InputProps={{
               style: {
-                background: '#fbeee6',
-                borderRadius: 8,
-                fontFamily: 'Segoe UI, sans-serif',
+                background: '#F8FAFC',
+                borderRadius: 2,
+                fontFamily: '"Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif',
+                fontSize: '14px',
+                color: '#334155',
+              },
+              sx: {
+                '& fieldset': {
+                  borderColor: '#E2E8F0',
+                },
+                '&:hover fieldset': {
+                  borderColor: '#475569',
+                },
+                '&.Mui-focused fieldset': {
+                  borderColor: '#334155',
+                },
               },
             }}
           />
@@ -159,25 +175,30 @@ export default function ProjectList({ selectedProject, setSelectedProject }) {
         <DialogActions sx={{ justifyContent: 'space-between', px: 3, pb: 2 }}>
           <Button onClick={() => setShowCreateModal(false)}
             sx={{
-              color: '#8134af',
+              color: '#64748B',
               fontWeight: 600,
               borderRadius: 2,
               px: 2,
-              '&:hover': { background: '#f3f0fa' },
+              textTransform: 'none',
+              '&:hover': { 
+                background: '#F1F5F9',
+                color: '#334155'
+              },
             }}
           >
             Cancel
           </Button>
           <Button onClick={handleCreateProject} variant="contained"
             sx={{
-              background: 'linear-gradient(90deg, #f58529 0%, #dd2a7b 40%, #8134af 70%, #515bd4 100%)',
+              background: '#334155',
               color: '#fff',
               fontWeight: 600,
               borderRadius: 2,
               px: 3,
-              boxShadow: '0 2px 8px 0 rgba(221, 42, 123, 0.12)',
+              textTransform: 'none',
+              boxShadow: '0 2px 4px 0 rgba(51, 65, 85, 0.15)',
               '&:hover': {
-                background: 'linear-gradient(90deg, #515bd4 0%, #8134af 30%, #dd2a7b 70%, #f58529 100%)',
+                background: '#475569',
               },
             }}
           >
