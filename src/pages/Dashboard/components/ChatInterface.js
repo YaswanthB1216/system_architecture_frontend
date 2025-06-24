@@ -191,7 +191,7 @@ export default function ChatInterface({ selectedProject }) {
         setMessages(formattedMessages);
       } catch (error) {
         console.error('fetchChatHistory error:', error);
-        showToast('Failed to fetch chat history', { type: 'error' });
+        // showToast('Failed to fetch chat history', { type: 'error' });
         setMessages([]);
       }
     }

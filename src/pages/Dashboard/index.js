@@ -85,7 +85,7 @@ const user = JSON.parse(localStorage.getItem('user'));
               letterSpacing: '0.2px'
             }}
           >
-            {selectedProject?.name || 'Dashboard'}
+            {selectedProject?.name || ''}
           </Typography>
           <Box position="relative">
             <Button 

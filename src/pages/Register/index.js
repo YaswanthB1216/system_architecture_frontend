@@ -21,7 +21,7 @@ function Register() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [role, setRole] = useState('user');
+  const [role, setRole] = useState('business_user');
   const [loading, setLoading] = useState(false);
   const { showToast } = useToast();
   const navigate = useNavigate();
@@ -30,7 +30,7 @@ function Register() {
     setLoading(true);
   
     try {
-      const response = await axiosInstance.post('/auth/register', {
+      const response = await axiosInstance.post('/signup', {
         email,
         password,
         name,
@@ -38,11 +38,13 @@ function Register() {
       });
   
       // If the request succeeds and status is 201 (Created)
-      if (response.status === 201) {
+      if (response.status === 200) {
         showToast('Registered successfully!');
         navigate('/');
       } else {
         // Should rarely hit this if Axios is configured correctly
+        console.log("response status...",response.status)
+        console.log("response",response)
         showToast(response.data?.message || 'Registration failed', 'error');
       }
     } catch (err) {
