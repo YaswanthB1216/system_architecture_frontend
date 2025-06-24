@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../aura-backend-main"
+		},
+		{
+			"path": "../../../aura-node-main/aura-node-main"
+		}
+	],
+	"settings": {}
+}
