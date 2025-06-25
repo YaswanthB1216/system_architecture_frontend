@@ -63,7 +63,8 @@ function Login() {
           maxWidth: 420,
           borderRadius: 4,
           boxShadow: '0 8px 32px 0 rgba(44, 62, 80, 0.25)',
-          background: 'rgba(255,255,255,0.98)',
+          // background: '#8eb1bfe8',
+          background: '#ffffff',
           px: 2,
         }}
       >
@@ -105,16 +106,18 @@ function Login() {
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 20, marginTop: 8 }}>
             <TextField
               id="username"
-              label="Username"
+              label="Name"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              placeholder="Enter your username"
+              placeholder="Enter your Name"
               fullWidth
               margin="normal"
               InputProps={{
                 style: {
-                  background: '#f7f9fa',
+                  // background: 'rgb(184 201 208 / 91%)',
+                  background: '#ffffff',
                   borderRadius: 8,
+                  
                 },
               }}
             />
@@ -124,12 +127,13 @@ function Login() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="Enter your password"
+              placeholder="Enter your Password"
               fullWidth
               margin="normal"
               InputProps={{
                 style: {
-                  background: '#f7f9fa',
+                  // background: 'rgb(184 201 208 / 91%)',
+                  background: '#ffffff',
                   borderRadius: 8,
                 },
               }}
